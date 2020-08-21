@@ -7,7 +7,7 @@
 sudo apt-get purge libreoffice* claws-mail* epiphany*
 sudo apt-get purge geany* bluej greenfoot scratch sonic* dillo gpicview penguinspuzzle
 sudo apt-get purge games* minecraft-pi
-sudo apt-get install vim fdupes ffmpeg exfat-fuse exfat-utils
+sudo apt-get install vim fdupes ffmpeg exfat-fuse exfat-utils samba
 sudo apt-get install youtube_dl flactools mp3tags
 cd ~/Documents/ && git clone https://www.github.com/zingzincoachtay/fastinbian.git
 #git clone https://github.com/trekhleb/javascript-algorithms
