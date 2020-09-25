@@ -6,7 +6,8 @@
 
 #sudo apt-get purge nodered python-pygame python3-pygame
 ./main.sh
-#sudo apt-get purge wolfram-engine gpicview chromium-browser* omxplayer qpdfview* vlc*
+#sudo apt-get purge wolfram-engine chromium-browser* vlc*
+sudo apt-get purge gpicview omxplayer qpdfview*
 sudo apt-get purge bluej geany* greenfoot scratch* sonic*
 sudo apt-get purge minecraft-pi
 #sound-theme* FreeDesktop
