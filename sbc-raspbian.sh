@@ -12,10 +12,6 @@ sudo apt-get purge bluej geany* greenfoot scratch* sonic*
 sudo apt-get purge minecraft-pi
 #sound-theme* FreeDesktop
 
+#get pihole
+#get pivpn
 sudo apt-get autoremove && sudo apt-get autoclean
-
-# https://www.raspberrypistarterkits.com/guide/raspberry-pi-hdmi-not-working/
-
-# https://vitux.com/4-ways-to-install-opera-browser-in-debian-10/
-sudo apt install snapd
-snap install opera

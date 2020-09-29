@@ -9,14 +9,14 @@ sudo apt-get update
 sudo apt-get purge libreoffice* claws-mail* dillo epiphany-browser* thunderbird*
 # check lsb_release?
 
-sudo apt-get install -y vim fdupes ffmpeg youtube-dl samba exfat-fuse exfat-utils
-#if [ ! command -v curl &> /dev/null ]; then
-#  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-#  sudo chmod a+rx /usr/local/bin/youtube-dl
-#else
-#  sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
-#  sudo chmod a+rx /usr/local/bin/youtube-dl
-#fi
+sudo apt-get install -y  vim fdupes
+sudo apt-get install -y  exfat-fuse exfat-utils zfsutils-linux ntfs-3g #  afs  zeroconf?
+sudo apt-get install -y  samba xrdp dnsmasq
+sudo apt-get install -y  ffmpeg youtube-dl
 
 #sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get autoclean
 sudo apt-get autoremove && sudo apt-get autoclean
+
+# https://vitux.com/4-ways-to-install-opera-browser-in-debian-10/
+sudo apt install snapd
+snap install opera
