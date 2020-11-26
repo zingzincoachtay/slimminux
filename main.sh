@@ -4,10 +4,12 @@
 #cd ~/Documents/ && git clone https://github.com/zingzincoachtay/tinyscript_python
 #cd ~/Documents/ && git clone https://github.com/coherentgraphics/cpdf-binaries
 
-sudo apt-get update
 # Purge (with any config files) some common pre-installed packages from persistent Live USB
 sudo apt-get purge libreoffice* claws-mail* dillo epiphany-browser* thunderbird*
+#sudo apt-get purge  epiphany-browser* thunderbird*
 # check lsb_release?
+sudo apt-get update
+
 
 sudo apt-get install -y  vim fdupes
 sudo apt-get install -y  exfat-fuse exfat-utils zfsutils-linux ntfs-3g #  afs  zeroconf?
