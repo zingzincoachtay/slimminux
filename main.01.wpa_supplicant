@@ -1,13 +1,9 @@
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-country=US
 
 network={
 	ssid="november"
 	psk="8855885588"
 	key_mgmt=WPA-PSK
 }
-
 network={
 	ssid="kasakokwog"
 	psk="8122696388"

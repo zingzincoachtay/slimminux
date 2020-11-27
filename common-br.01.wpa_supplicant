@@ -14,4 +14,3 @@ network={
 	psk="8122696388"
 	key_mgmt=WPA-PSK
 }
-
