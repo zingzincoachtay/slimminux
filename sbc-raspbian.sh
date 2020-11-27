@@ -4,14 +4,12 @@
 # dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -nr | more
 # dpkg-query -Wf '${Installed-Size}\t${Package}\t${Priority}\n' | egrep '\s(optional|extra)' | cut -f 1,2 | sort -nr | less
 
-#sudo apt-get purge nodered python-pygame python3-pygame
 ./main.sh
-#sudo apt-get purge wolfram-engine chromium-browser* vlc*
-sudo apt-get -y purge gpicview omxplayer qpdfview*
-sudo apt-get -y purge bluej geany* greenfoot scratch* sonic*
-sudo apt-get -y purge minecraft-pi
-#sound-theme* FreeDesktop
+sudo apt-get purge -y gpicview omxplayer qpdfview*
+sudo apt-get purge -y bluej geany* greenfoot scratch* sonic*
+sudo apt-get purge -y minecraft-pi
+#sudo apt-get purge -y nodered
+sudo apt-get purge -y python-pygame python3-pygame
+sudo apt-get purge -y wolfram-engine 
 
-#get pihole
-#get pivpn
 sudo apt-get autoremove && sudo apt-get autoclean

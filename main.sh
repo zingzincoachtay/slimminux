@@ -6,8 +6,7 @@
 
 # Purge (with any config files) some common pre-installed packages from persistent Live USB
 # Common
-sudo apt-get -y purge libreoffice* claws-mail* dillo epiphany-browser* thunderbird*
-#sudo apt-get purge  epiphany-browser* thunderbird*
-# check by lsb_release? lsb_release not available in Raspbian Buster initially
+sudo apt-get purge -y libreoffice* claws-mail* dillo epiphany-browser*
 
-sudo apt-get autoremove && sudo apt-get autoclean
+# check by lsb_release? lsb_release not available in Raspbian Buster initially
+#sudo apt-get purge -y thunderbird*
