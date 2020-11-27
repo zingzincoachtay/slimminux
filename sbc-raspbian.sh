@@ -8,7 +8,7 @@ cp --backup=numbered /etc/wpa_supplicant/wpa_supplicant.conf ~/Desktop/
 sudo cat original-wpa_supplicant.0 main.01.wpa_supplicant > /etc/wpa_supplicant/wpa_supplicant.conf
 
 bash ./main.sh
-sudo apt-get purge -y qpdfview* galculator omxplayer gpicview
+sudo apt-get purge  qpdfview* galculator omxplayer gpicview
 #did qpdfview use ruby2.5???
 sudo apt-get purge -y scratch* nuscratch sonic-pi* bluej* geany* thonny mu-editor greenfoot
 #sudo apt-get purge -y nodered
