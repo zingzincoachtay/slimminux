@@ -5,11 +5,10 @@
 # dpkg-query -Wf '${Installed-Size}\t${Package}\t${Priority}\n' | egrep '\s(optional|extra)' | cut -f 1,2 | sort -nr | less
 
 ./main.sh
-sudo apt-get purge -y gpicview omxplayer qpdfview*
-sudo apt-get purge -y bluej geany* greenfoot scratch* sonic*
-sudo apt-get purge -y minecraft-pi
+sudo apt-get purge -y qpdfview* galculator omxplayer gpicview
+sudo apt-get purge -y scratch* nuscratch sonic-pi* bluej* geany* thonny mu-editor greenfoot
 #sudo apt-get purge -y nodered
-sudo apt-get purge -y python-pygame python3-pygame
-sudo apt-get purge -y wolfram-engine 
+sudo apt-get purge -y minecraft-pi python-pygame python3-pygame python-games
+sudo apt-get purge -y wolfram-engine
 
 sudo apt-get autoremove && sudo apt-get autoclean

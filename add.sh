@@ -2,9 +2,6 @@
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
 sudo apt-get install -y  vim dnsmasq
-#sudo apt-get install -y  exfat-fuse exfat-utils zfsutils-linux ntfs-3g #  afs  zeroconf?
-#sudo apt-get install -y  samba xrdp dnsmasq nitroshare
-#sudo apt-get install -y  ffmpeg youtube-dl fdupes atom
 
 # https://vitux.com/4-ways-to-install-opera-browser-in-debian-10/
 #sudo apt install snapd
