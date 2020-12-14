@@ -1,7 +1,11 @@
 #!/bin/bash
 sudo apt-get update && sudo apt-get dist-upgrade -y
 
-sudo apt-get install -y  vim dnsmasq
+sudo apt-get install -y  vim
+
+
+## temporary
+sudo apt-get install -y  dnsmasq
 
 # https://vitux.com/4-ways-to-install-opera-browser-in-debian-10/
 #sudo apt install snapd

@@ -1,6 +1,8 @@
 #!/bin/bash
 ./main.sh
 
-sudo apt-get purge  scratch*  gpicview  leafpad  galculator  gpicview
+# Tinkerboard
+sudo apt-get purge -y
+
 
 sudo apt-get autoremove && sudo apt-get autoclean
