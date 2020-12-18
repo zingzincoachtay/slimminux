@@ -1,9 +1,11 @@
 #!/bin/bash
 sudo hostname nano
-cp --backup=numbered /etc/wpa_supplicant.conf ~/Desktop/
-#sudo cat main.01.wpa_supplicant >> /etc/wpa_supplicant.conf
+if [ ! -f ~/Desktop/wpa_supplicant.0 ]; then
+  bash ./ready.sh
+else
+  sudo cat 0ready.wpa_supplicant >> /etc/wpa_supplicant.conf
+fi
 
-bash ./main.sh
 # NVIDIA Jetpack
 sudo apt-get purge -y thunderbird*
 

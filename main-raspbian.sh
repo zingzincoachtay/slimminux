@@ -1,10 +1,9 @@
 #!/bin/bash
 sudo hostname blackberry
-bash ./main.sh
 if [ ! -f ~/Desktop/wpa_supplicant.0 ]; then
-  echo Run the ./main.sh first
+  bash ./ready.sh
 else
-  sudo cat raspbian-wpa_supplicant.0 main-01.wpa_supplicant > /etc/wpa_supplicant/wpa_supplicant.conf
+  sudo cat 0-raspbian-wpa_supplicant.0 0ready.wpa_supplicant > /etc/wpa_supplicant/wpa_supplicant.conf
 fi
 ### Purge (with any config files) some of the common pre-installed packages
 ###     on a persistent live Linux USB image. Start points are referred from here:
