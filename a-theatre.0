@@ -1,0 +1,23 @@
+# Kodi Media Center bloc
+# Installing Kodi Media Center
+#sudo apt-get install kodi-*
+
+# Plex Media Server bloc
+# Installing Plex Media Server
+# https://bestappsbuzz.com/raspberry-pi/plex-for-raspberry-pi/
+#sudo apt install apt-transport-https ca-certificates curl
+#curl https://download.plex.tv/plex-keys/PlexSign.key | sudo apt-key add –
+#echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
+#sudo apt update && sudo apt install plexmediaserver
+# It’s recommended to run Plex under Pi user as it will avoid any permission issue. Use the command.
+# Edit the following output line
+#   _From_: PLEX_MEDIA_SERVER_USER=plex
+#     _To_: PLEX_MEDIA_SERVER_USER=pi
+#perl -i'.original' -pe 's/^PLEX_MEDIA_SERVER_USER=plex$/PLEX_MEDIA_SERVER_USER=pi/g' /etc/default/plexmediaserver.prev
+#echo vi /etc/default/plexmediaserver.prev
+
+# Emby Media center bloc
+# Installing Emby Media center
+# https://www.electromaker.io/tutorial/blog/emby-server-raspberry-pi
+#wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.4.3.0/emby-server-deb_4.4.3.0_armhf.deb
+#dpkg -i emby-server-deb_4.4.3.0_armhf.deb

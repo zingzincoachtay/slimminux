@@ -1,15 +1,11 @@
 #!/bin/bash
 sudo hostname blackberry
-if [ -f /etc/wpa_supplicant/wpa_supplicant.conf ]; then
-  # If the backup of the configuration file does not exist, cp
-  # If the latest backup of the configuration file is different from the current configuration file, cp --backup=numbered
-  [ ! -f ~/Desktop/wpa_supplicant.0 || $(cmp -s "/etc/wpa_supplicant/wpa_supplicant.conf" "~/Desktop/wpa_supplicant.0")==1 ] && cp -backup=numbered "/Volumes/boot/wpa_supplicant.conf" "~/Desktop/wpa_supplicant.0"
-  # If neither file exists (null byte), would `cmp` return a match?
-  #[ $(cmp -s "/Volumes/boot/wpa_supplicant.conf" "~/Desktop/wpa_supplicant.0")==1 ] && cp "/Volumes/boot/wpa_supplicant.conf" "~/Desktop/wpa_supplicant.0"
-fi
-sudo cat raspbian-wpa_supplicant.0 main-01.wpa_supplicant > /etc/wpa_supplicant/wpa_supplicant.conf
-
 bash ./main.sh
+if [ ! -f ~/Desktop/wpa_supplicant.0 ]; then
+  echo Run the ./main.sh first
+else
+  sudo cat raspbian-wpa_supplicant.0 main-01.wpa_supplicant > /etc/wpa_supplicant/wpa_supplicant.conf
+fi
 ### Purge (with any config files) some of the common pre-installed packages
 ###     on a persistent live Linux USB image. Start points are referred from here:
 ### https://github.com/RPi-Distro/pi-gen

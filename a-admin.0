@@ -1,0 +1,9 @@
+
+exfat-fuse exfat-utils zfsutils-linux ntfs-3g
+#sudo apt-get install  afs  zeroconf?
+gparted
+fdupes
+atom
+
+#https://www.makeuseof.com/tag/how-to-analyze-your-disk-usage-pattern-in-linux/
+baobabb
