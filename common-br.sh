@@ -27,18 +27,24 @@ sudo apt-get install -y dnsmasq
 ### 4. Within this file add the following, making sure you replace the ssid with
 #      the name of the network you want to connect to and replace the psk value
 #      with the password for that network.
-sudo cp ./common-br.01.wpa_supplicant /etc/wpa_supplicant/wpa_supplicant.conf
+function SupplyWifiName {
+  sudo cat 0-raspbian-wpa_supplicant.0 0ready.wpa_supplicant > /etc/wpa_supplicant/wpa_supplicant.conf
+}
 
 ### 5. With the wireless network now setup to correctly connect we can proceed
 #      with setting up our eth0 interface. This will basically force it to use a
 #      static IP address, not setting this up can cause several issues.
 ### 6. Within this file we need to add the following lines, make sure you
 #      replace eth0 with the correct interface of your ethernet.
-sudo cat ~/Desktop/dhcpcd.conf ./common-br.02.dhcpcd > /etc/dhcpcd.conf
-### 7. With our changes made to dhcpcd configuration we should now restart the
-#      service by running the following command:
-sudo service dhcpcd restart
-
+function Edit_dhcpcd {
+  [ $1 ] && sudo service dhcpcd restart
+  if [ $(perl -ne 'print if /^static ip_address/' /etc/dhcpcd.conf | xargs wc -l)==0 ]; then
+    sudo cat ./common-br.02.dhcpcd >> /etc/dhcpcd.conf
+    ### 7. With our changes made to dhcpcd configuration we should now restart the
+    #      service by running the following command:
+    sudo service dhcpcd restart
+  fi
+}
 ### 8. Before we get started with modifying dnsmasq’s configuration we will first
 #      make a backup of the original configuration by running the following command.
 ### 9. With the original configuration now backed up and moved out of the way we
@@ -46,14 +52,15 @@ sudo service dhcpcd restart
 #      command below into the terminal.
 ### 10. Now that we have our new file created we want to add the lines below,
 #       these lines basically tell the dnsmasq package how to handle DNS and DHCP traffic.
-sudo cp --backup=numbered ./common-br.03.dnsmasq /etc/dnsmasq.conf
-
+if [ $(perl -ne '^listen\-address' /etc/dnsmasq.conf | xargs wc -l)==0 ]; then
+  sudo cp --backup=numbered ./common-br.03.dnsmasq /etc/dnsmasq.conf
+fi
 ### 11. We now need to configure the Raspberry Pi’s firewall so that it will
 #       forward all traffic from our eth0 connection over to our wlan0
 #       connection. Before we do this we must first enable ipv4p IP Forwarding through the sysctl.conf configuration file, so let’s begin editing it with the following command:
 ### 12. Within this file you need to find the following line, and remove the #
 #       from the beginning of it.
-sudo sed -i 's/#net.ipv4.ip_forward=1/net\.ipv4\.ip_forward=1/' /etc/sysctl.conf
+sudo perl -i"orig" -ne 's/^\s*#(net.ipv4.ip_forward=1)/\1/' /etc/sysctl.conf
 
 ### 13. Now since we don’t want to have to wait until the next reboot before the
 #       configuration is loaded in, we can run the following command to enable it immediately.
