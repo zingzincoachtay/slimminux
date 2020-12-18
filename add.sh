@@ -7,25 +7,21 @@ sudo apt-get install -y  vim
 sudo apt-get install -y  dnsmasq
 ## temporary <<
 
-if false; then
-  perl -ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs sudo apt-get install
-#  perl -ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs -n 1 sudo apt-get install -y
-fi
+function batch_install {
+  if $1; then
+    perl -ne 'print if !/^#/ || !/^$/' $2 | xargs sudo apt-get install
+  #  perl -ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs -n 1 sudo apt-get install -y
+  #  perl -0ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs -0 sudo apt-get install -y
+  fi
+}
 
-if false; then
-  perl -ne 'print if !/^#/ || !/^$/' ./a-av.0 | xargs sudo apt-get install
-#  perl -ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs -n 1 sudo apt-get install -y
-fi
+batch_install false ./a-admin.0
 
-if false; then
-  perl -ne 'print if !/^#/ || !/^$/' ./a-network.0 | xargs sudo apt-get install
-#  perl -ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs -n 1 sudo apt-get install -y
-fi
+batch_install false ./a-av.0
 
-if false; then
-  perl -ne 'print if !/^#/ || !/^$/' ./a-theatre.0 | xargs sudo apt-get install
-#  perl -ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs -n 1 sudo apt-get install -y
-fi
+batch_install false ./a-network.0
+
+batch_install false ./a-theatre.0
 
 #if [ ! command -v curl &> /dev/null ]; then
 #  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
