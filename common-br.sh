@@ -37,7 +37,7 @@ function SupplyWifiName {
 ### 6. Within this file we need to add the following lines, make sure you
 #      replace eth0 with the correct interface of your ethernet.
 function Edit_dhcpcd {
-  [ $1 ] && sudo service dhcpcd restart
+  [ $1 == "on" ] && sudo service dhcpcd restart
   if [ $(perl -ne 'print if /^static ip_address/' /etc/dhcpcd.conf | xargs wc -l)==0 ]; then
     sudo cat ./common-br.02.dhcpcd >> /etc/dhcpcd.conf
     ### 7. With our changes made to dhcpcd configuration we should now restart the
