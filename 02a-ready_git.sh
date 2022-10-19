@@ -6,6 +6,9 @@ if [[ $myname =~ @ ]]; then
   myname=$2
   myemail=$1
 fi
+
+### Set up tools
+
 git config --global user.name  "$myname"
 git config --global user.email "$myemail"
 git config --list
