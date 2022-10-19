@@ -1,15 +1,15 @@
 
 # To play `ffplay`, install ffmpeg
-1 ffmpeg
+0 ffmpeg
 
+1 sound-juicer
+1 soundconverter
 2 metaflac id3v2 sox
 
 # https://linuxhint.com/play_mp3_files_commandline/
 # To play `nvlc`, install vlc
 3 vlc
 3 handbrake
-3 sound-juicer
-3 soundconverter
 
 4 avidemux 
 # sudo apt-get install freac cdex

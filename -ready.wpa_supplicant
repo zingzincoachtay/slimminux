@@ -1,11 +1,6 @@
 
 network={
-	ssid="november"
-	psk="8855885588"
-	key_mgmt=WPA-PSK
-}
-network={
-	ssid="kasakokwog"
-	psk="8122696388"
+	ssid=""
+	psk=""
 	key_mgmt=WPA-PSK
 }

@@ -9,7 +9,7 @@ function batch_install {
   fi
 }
 
-batch_install false ./i-admin.0
+batch_install true ./i-admin.0
 
 batch_install false ./i-av.0
 
