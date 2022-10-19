@@ -1,0 +1,11 @@
+
+0 fdupes findimagedupes
+0 vim
+
+1 exfat-fuse exfat-utils
+
+2 zfsutils-linux ntfs-3g
+
+3 gparted
+# https://www.makeuseof.com/tag/how-to-analyze-your-disk-usage-pattern-in-linux/
+# sudo apt-get install baobabb

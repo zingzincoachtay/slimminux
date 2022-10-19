@@ -1,27 +1,21 @@
 #!/bin/bash
+
 sudo apt-get update && sudo apt-get dist-upgrade -y
-
-sudo apt-get install -y  vim
-
-## temporary >>
-sudo apt-get install -y  dnsmasq
-## temporary <<
 
 function batch_install {
   if $1; then
     perl -ne 'print if !/^#/ || !/^$/' $2 | xargs sudo apt-get install
-  #  perl -ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs -n 1 sudo apt-get install -y
-  #  perl -0ne 'print if !/^#/ || !/^$/' ./a-admin.0 | xargs -0 sudo apt-get install -y
+    sudo apt-get install $(perl -ne 'print if /^0 /' $2 | perl -ne 's/^\d //;print')
   fi
 }
 
-batch_install false ./a-admin.0
+batch_install false ./i-admin.0
 
-batch_install false ./a-av.0
+batch_install false ./i-av.0
 
-batch_install false ./a-network.0
+batch_install false ./i-network.0
 
-batch_install false ./a-theatre.0
+batch_install false ./i-theatre.0
 
 #if [ ! command -v curl &> /dev/null ]; then
 #  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
