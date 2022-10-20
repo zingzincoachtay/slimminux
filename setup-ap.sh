@@ -11,3 +11,13 @@
 ###         1.1.1.1 (Cloudflare), 1.0.0.1
 ###         8.8.8.8 (Google), 8.8.4.4
 ###         208.67.222.222 (OpenDNS), 208.67.220.220
+
+
+### raspap-webgui
+#curl -sL https://install.raspap.com | bash
+### IP address: 10.3.141.1
+###   Username: admin
+###   Password: secret
+### DHCP range: 10.3.141.50 to 10.3.141.255
+###   SSID: raspi-webgui
+###   Password: ChangeMe

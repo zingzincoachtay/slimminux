@@ -4,18 +4,22 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 
 function batch_install {
   if $1; then
-    perl -ne 'print if !/^#/ || !/^$/' $2 | xargs sudo apt-get install
-    sudo apt-get install $(perl -ne 'print if /^0 /' $2 | perl -ne 's/^\d //;print')
+    #perl -ne 'print if !/^#/ || !/^$/' $2 | xargs sudo apt-get install
+    sudo apt-get install $(perl -ne 'print if /^[0]/' $2 | perl -ne 's/^\d //;print') -y
   fi
 }
 
-batch_install true ./i-admin.0
+batch_install false ./i-admin.0
 
 batch_install false ./i-av.0
 
 batch_install false ./i-network.0
 
 batch_install false ./i-theatre.0
+
+
+#xargs sudo apt-get install < pkglist
+
 
 #if [ ! command -v curl &> /dev/null ]; then
 #  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl

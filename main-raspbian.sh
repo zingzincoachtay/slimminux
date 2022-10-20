@@ -1,10 +1,6 @@
 #!/bin/bash
 sudo hostname blackberry
-if [ ! -f ~/Desktop/wpa_supplicant.0 ]; then
-  bash ./ready.sh
-else
-  sudo cat 0-raspbian-wpa_supplicant.0 0ready.wpa_supplicant > /etc/wpa_supplicant/wpa_supplicant.conf
-fi
+
 ### Purge (with any config files) some of the common pre-installed packages
 ###     on a persistent live Linux USB image. Start points are referred from here:
 ### https://github.com/RPi-Distro/pi-gen
@@ -33,5 +29,3 @@ sudo apt-get purge -y thonny dillo geany
     sudo apt-get purge -y libreoffice-pi libreoffice-help-en-gb libreoffice-l10n-en-gb
 sudo apt-get purge  galculator  gpicview
 #did qpdfview use ruby2.5???
-
-sudo apt-get autoremove && sudo apt-get autoclean
